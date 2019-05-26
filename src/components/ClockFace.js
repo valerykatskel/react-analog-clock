@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { SecondLine } from './SecondLine'
+import { SecondLine, BigNumberLine, SmallNumberLine } from './index'
 
 const ClockFace = props => {
 	
-	const secondsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]
-	
-	const secondLines = props.showSecondsLines ? secondsArr.map((number) => < SecondLine {...props} number={number} />) : ''
+	const secondLinesArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]
+	const secondLines = props.showSecondsLines ? secondLinesArr.map((number) => < SecondLine {...props} number={number} />) : ''
+
+	const bigNumberLinesArr = [15,30,45,60]
+	const bigNumberLines = props.showBigNumberLines ? bigNumberLinesArr.map((number) => < BigNumberLine {...props} number={number} />) : ''
+
+	const smallNumberLinesArr = [5,10,20,25,35,40,50,55]
+	const smallNumberLines = props.showSmallNumberLines ? smallNumberLinesArr.map((number) => < SmallNumberLine {...props} number={number} />) : ''
 
 	const getDegByHours = (hours) => {
 		if (isNaN(hours) ||  typeof hours === 'undefined') {
@@ -62,18 +67,6 @@ const ClockFace = props => {
 			backgroundColor: '#c7cad2',
 			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
-		number3tick: {
-			position: 'absolute',
-			top: parseInt(props.clockSize, 10)/2,
-			left: parseInt(props.clockSize, 10)/2,
-			width: '50%',
-			height: props.bigNumbersLineWidth,
-			marginTop: -1 * parseInt(props.bigNumbersLineWidth,10)/2,
-			transform: `rotate(${getDegByHours(3)}deg)`,
-			transformOrigin: '0% 0%',
-			backgroundColor: '#c7cad2',
-			background: `linear-gradient(to right,  #fff 0%,#fff ${props.bigNumbersLineSize}%,#54a3ee ${props.bigNumbersLineSize}%,#1e69de 100%)`
-		},
 		number4tick: {
 			position: 'absolute',
 			top: parseInt(props.clockSize, 10)/2,
@@ -95,18 +88,6 @@ const ClockFace = props => {
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
 			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
-		},
-		number6tick: {
-			position: 'absolute',
-			top: parseInt(props.clockSize, 10)/2,
-			left: parseInt(props.clockSize, 10)/2,
-			width: '50%',
-			height: props.bigNumbersLineWidth,
-			marginLeft: parseInt(props.bigNumbersLineWidth)/2,
-			transform: `rotate(${getDegByHours(6)}deg)`,
-			transformOrigin: '0% 0%',
-			backgroundColor: '#c7cad2',
-			background: `linear-gradient(to right,  #fff 0%,#fff ${props.bigNumbersLineSize}%,#54a3ee ${props.bigNumbersLineSize}%,#1e69de 100%)`
 		},
 		number7tick: {
 			position: 'absolute',
@@ -130,18 +111,6 @@ const ClockFace = props => {
 			backgroundColor: '#c7cad2',
 			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
-		number9tick: {
-			position: 'absolute',
-			top: parseInt(props.clockSize, 10)/2,
-			left: parseInt(props.clockSize, 10)/2,
-			width: '50%',
-			height: props.bigNumbersLineWidth,
-			marginTop: parseInt(props.bigNumbersLineWidth,10)/2,
-			transform: `rotate(${getDegByHours(9)}deg)`,
-			transformOrigin: '0% 0%',
-			backgroundColor: '#c7cad2',
-			background: `linear-gradient(to right,  #fff 0%,#fff ${props.bigNumbersLineSize}%,#54a3ee ${props.bigNumbersLineSize}%,#1e69de 100%)`
-		},
 		number10tick: {
 			position: 'absolute',
 			top: parseInt(props.clockSize, 10)/2,
@@ -163,24 +132,16 @@ const ClockFace = props => {
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
 			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
-		},
-		number12tick: {
-			position: 'absolute',
-			top: parseInt(props.clockSize, 10)/2,
-			left: parseInt(props.clockSize, 10)/2,
-			width: '50%',
-			height: props.bigNumbersLineWidth,
-			marginLeft: -1 * parseInt(props.bigNumbersLineWidth)/2,
-			transform: `rotate(${getDegByHours(12)}deg)`,
-			transformOrigin: '0% 0%',
-			backgroundColor: '#c7cad2',
-			background: `linear-gradient(to right,  #fff 0%,#fff ${props.bigNumbersLineSize}%,#54a3ee ${props.bigNumbersLineSize}%,#1e69de 100%)`
 		}
 	}
 	
 	return (
 		<div className="clock-face">
 			{secondLines}
+			{bigNumberLines}
+			{smallNumberLines}
+			<div className="central-circle" style={ styles.centralCircle }></div>
+			<div className="central-circle-small" style={ styles.centralCircleSmall }></div>
 		</div>
     )
 }

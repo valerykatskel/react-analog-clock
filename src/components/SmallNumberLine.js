@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const SecondLine = props => {
+const SmallNumberLine = props => {
 
     const getDegByNumber = (number) => {
 		if (isNaN(number) ||  typeof number === 'undefined') {
@@ -9,15 +9,16 @@ const SecondLine = props => {
 	
 		return (number/60)*360 - 90
 	}
-    
+    const smallNumberLineClassName = `small-number-line-${props.number}`
+
     const style = {
         lineHolder: {
             position: 'absolute',
-            top: parseInt(props.clockSize, 10)/2 - parseInt(props.secondsProps.lineWidth,10)/2,
+            top: parseInt(props.clockSize, 10)/2 - parseInt(props.smallNumberLineWidth,10)/2,
             left: parseInt(props.clockSize, 10)/2,
             width: parseInt(props.clockSize, 10)/2,
             height: 0,
-            border: `${parseInt(props.secondsProps.lineWidth,10)/2}px solid transparent`,
+            border: `${parseInt(props.smallNumberLineWidth,10)/2}px solid transparent`,
             borderLeft: 'none',
             borderRight: 'none',
             transform: `rotate(${getDegByNumber(props.number)}deg)`,
@@ -27,18 +28,18 @@ const SecondLine = props => {
             position: 'absolute',
             left: 'auto',
             right: 0,
-            top: -1 * parseInt(props.allNumbersLineWidth,10)/2,
+            top: -1 * parseInt(props.smallNumberLineWidth,10)/2,
             bottom: 0,
             display: 'inline-block',
-            width: parseInt(props.allNumbersLineLength,10),
-            height: parseInt(props.allNumbersLineWidth,10),
+            width: parseInt(props.smallNumberLineLength,10),
+            height: parseInt(props.smallNumberLineWidth,10),
             backgroundColor: '#1e69de'
         }
     }
     
-    if (props.showSecondsLines) {
-        return <div className={props.number} style={ style.lineHolder }><div style={ style.lineInner }></div></div>
+    if (props.showSmallNumberLines) {
+        return <div className={ smallNumberLineClassName } style={ style.lineHolder }><div style={ style.lineInner }></div></div>
     } else return false
 }
 
-export { SecondLine };
+export { SmallNumberLine };

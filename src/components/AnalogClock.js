@@ -51,12 +51,15 @@ class AnalogClock extends Component {
 				clockSize: this.props.size,
 				clockInnerBigCircleSize: this.props.clockInnerBigCircleSize,
 				clockInnerSmallCircleSize: this.props.clockInnerSmallCircleSize,
-				bigNumbersLineSize: 100 - this.props.bigNumbersLineSize,
-				bigNumbersLineWidth: this.props.bigNumbersLineWidth,
-				smallNumbersLineSize: 100 - this.props.smallNumbersLineSize,
-				smallNumbersLineWidth: this.props.smallNumbersLineWidth,
-				allNumbersLineSize: 100 - this.props.seconds.lineLength,
+				showBigNumberLines: this.props.showBigNumberLines,
+				bigNumberLineLength: this.props.bigNumberLineLength,
+				bigNumberLineWidth: this.props.bigNumberLineWidth,
+				smallNumberLineLength: this.props.smallNumberLineLength,
+				smallNumberLineWidth: this.props.smallNumberLineWidth,
+				allNumbersLineLength: this.props.seconds.lineLength,
+				allNumbersLineWidth: this.props.seconds.lineWidth,
 				showSecondsLines: this.props.seconds.showLines,
+				showSmallNumberLines: this.props.showSmallNumberLines,
 				secondsProps: this.props.seconds
 			}
 		}
