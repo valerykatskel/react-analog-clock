@@ -14,17 +14,19 @@ const SecondLine = props => {
 
     const style = {
         position: 'absolute',
-        top: parseInt(props.clockSize, 10)/2,
+        top: parseInt(props.clockSize, 10)/2 - parseInt(props.secondsProps.lineWidth,10)/2,
         left: parseInt(props.clockSize, 10)/2,
         width: '50%',
-        height: props.secondsLineWidth,
-        transform: `rotate(${getDegByNumber(1)}deg)`,
+        height: props.secondsProps.lineWidth,
+        transform: `rotate(${getDegByNumber(props.number)}deg)`,
         transformOrigin: '0% 0%',
         backgroundColor: '#c7cad2',
-        background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
+        background: `linear-gradient(to right,  #fff 0%,#fff ${props.allNumbersLineSize}%,#54a3ee ${props.allNumbersLineSize}%,#1e69de 100%)`
     }
     
-    return <div style={ style.number1tick }></div>
+    if (props.showSecondsLines) {
+        return <div style={ style }></div>
+    } else return false
 }
 
 export { SecondLine };

@@ -8,7 +8,7 @@ const HourHand = props => {
 
     const styles = {
         position: 'absolute',
-        top: parseInt(props.clockSize, 10)/2,
+        top: parseInt(props.clockSize, 10)/2 - 3,
         left: parseInt(props.clockSize, 10)/2,
         border: '1px solid #848484',
         width: getHourHandWidth(),

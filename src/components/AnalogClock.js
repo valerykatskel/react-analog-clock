@@ -3,17 +3,20 @@ import { SecondHand, MinuteHand, HourHand, ClockFace } from './index'
 
 class AnalogClock extends Component {
 	
-	state = {
-		currentTime: new Date()
+	constructor(props) {
+		super(props)
+		this.state = {
+			currentTime: new Date()
+		}
 	}
-	
-	launchClock = (() => {
+
+	componentDidMount = () => {
 		setInterval(()=>{
 			this.setState({
 				currentTime: new Date()
 			})	
 		}, 1000)
-	})()
+	}
 
 	clockStyles = {
 		clock: {
@@ -52,7 +55,9 @@ class AnalogClock extends Component {
 				bigNumbersLineWidth: this.props.bigNumbersLineWidth,
 				smallNumbersLineSize: 100 - this.props.smallNumbersLineSize,
 				smallNumbersLineWidth: this.props.smallNumbersLineWidth,
-				showSecondsLines: this.props.showSecondsLines
+				allNumbersLineSize: 100 - this.props.seconds.lineLength,
+				showSecondsLines: this.props.seconds.showLines,
+				secondsProps: this.props.seconds
 			}
 		}
 
