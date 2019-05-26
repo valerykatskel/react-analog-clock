@@ -10,7 +10,7 @@ const HourHand = props => {
         position: 'absolute',
         top: parseInt(props.clockSize, 10)/2,
         left: parseInt(props.clockSize, 10)/2,
-        border: '1px solid red',
+        border: '1px solid #848484',
         width: getHourHandWidth(),
         height: 6,
         transform: `rotate(${getDegByHours()}deg)`,
