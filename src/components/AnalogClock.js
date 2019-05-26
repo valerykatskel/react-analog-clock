@@ -75,4 +75,4 @@ class AnalogClock extends Component {
 	}
 }
 
-export { AnalogClock };
+export { AnalogClock }

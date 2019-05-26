@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnalogClock } from "./components/AnalogClock";
+import { AnalogClock, NumberSlider } from "./components/index";
 
 class App extends React.Component {
     
@@ -32,6 +32,7 @@ class App extends React.Component {
     
         return <div style={ clockWrapperStyles }>
 			< AnalogClock { ...settings } />
+            < NumberSlider />
 		    </div>
 	}
 }
