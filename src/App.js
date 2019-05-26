@@ -8,13 +8,13 @@ class App extends React.Component {
             textAlign: 'center'
         }  
         
-        const clockParams = {
-            size: 500,                          // size of clock in px
+        const settings = {
+            size: 500,                          // size of clock in px (diameter)
             clockInnerBigCircleSize: 360,       // size of inner clock face area in px
             clockInnerSmallCircleSize: 30,      // size of start point of all hands in px
             showBigNumberLines: true,           // show lines for big numbers such as 3,6,9,12
-            bigNumberLineWidth: 10,              // width of lines near by big numbers (12, 3, 6, 9) in px
-            bigNumberLineLength: 18,            // length of lines near by big numbers (12, 3, 6, 9) in px
+            bigNumberLineWidth: 15,              // width of lines near by big numbers (12, 3, 6, 9) in px
+            bigNumberLineLength: 20,            // length of lines near by big numbers (12, 3, 6, 9) in px
             showSmallNumberLines: true,         // show lines for small numbers such as 1,2,4,5,7,8,10,11    
             smallNumberLineWidth: 3,            // width of lines near by small numbers (1, 2, 4, 5, 7, 8, 10, 11) in px
             smallNumberLineLength: 8,          // length of lines near by small numbers (1, 2, 4, 5, 7, 8, 10, 11) in px
@@ -31,7 +31,7 @@ class App extends React.Component {
         }
     
         return <div style={ clockWrapperStyles }>
-			< AnalogClock { ...clockParams } />
+			< AnalogClock { ...settings } />
 		    </div>
 	}
 }
