@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const SecondLine = props => {
 
@@ -10,6 +10,8 @@ const SecondLine = props => {
 		return (number/60)*360 - 90
 	}
     
+    const uniqId = `secondLine-${props.number}`
+
     const style = {
         lineHolder: {
             position: 'absolute',
@@ -37,7 +39,7 @@ const SecondLine = props => {
     }
     
     if (props.showSecondsLines) {
-        return <div className={props.number} style={ style.lineHolder }><div style={ style.lineInner }></div></div>
+        return <div id={ uniqId } className={props.number} style={ style.lineHolder }><div style={ style.lineInner }></div></div>
     } else return false
 }
 

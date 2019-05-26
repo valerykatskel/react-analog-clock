@@ -49,7 +49,7 @@ class AnalogClock extends Component {
 			},
 			clockFace: {
 				clockSize: this.props.size,
-				clockInnerBigCircleSize: this.props.clockInnerBigCircleSize,
+				clockInnerBigCircleSize: this.props.clockInnerBigCircleSize/100*this.props.size,
 				clockInnerSmallCircleSize: this.props.clockInnerSmallCircleSize,
 				showBigNumberLines: this.props.showBigNumberLines,
 				bigNumberLineLength: this.props.bigNumberLineLength,

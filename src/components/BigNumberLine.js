@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const BigNumberLine = props => {
 
@@ -9,7 +9,7 @@ const BigNumberLine = props => {
 	
 		return (number/60)*360 - 90
 	}
-    const bigNumberLineClassName = `big-number-line-${props.number}`
+    const uniqId = `bigNumberLine-${props.number}`
 
     const style = {
         lineHolder: {
@@ -38,7 +38,7 @@ const BigNumberLine = props => {
     }
     
     if (props.showBigNumberLines) {
-        return <div className={ bigNumberLineClassName } style={ style.lineHolder }><div style={ style.lineInner }></div></div>
+        return <div id={ uniqId } style={ style.lineHolder }><div style={ style.lineInner }></div></div>
     } else return false
 }
 

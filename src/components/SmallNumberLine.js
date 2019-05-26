@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const SmallNumberLine = props => {
 
@@ -9,7 +9,7 @@ const SmallNumberLine = props => {
 	
 		return (number/60)*360 - 90
 	}
-    const smallNumberLineClassName = `small-number-line-${props.number}`
+    const uniqId = `smallNumberLine-${props.number}`
 
     const style = {
         lineHolder: {
@@ -38,7 +38,7 @@ const SmallNumberLine = props => {
     }
     
     if (props.showSmallNumberLines) {
-        return <div className={ smallNumberLineClassName } style={ style.lineHolder }><div style={ style.lineInner }></div></div>
+        return <div id={ uniqId } style={ style.lineHolder }><div style={ style.lineInner }></div></div>
     } else return false
 }
 
