@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import { SecondLine } from './SecondLine'
 
 const ClockFace = props => {
+	
+	const secondsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]
+	const secondLines = props.showSecondsLines ? secondsArr.map((number) => < SecondLine {...props.secondLine} />) : ''
 
 	const getDegByHours = (hours) => {
 		if (isNaN(hours) ||  typeof hours === 'undefined') {
@@ -40,22 +44,22 @@ const ClockFace = props => {
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(1)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number2tick: {
 			position: 'absolute',
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(2)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number3tick: {
 			position: 'absolute',
@@ -74,22 +78,22 @@ const ClockFace = props => {
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(4)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number5tick: {
 			position: 'absolute',
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(5)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number6tick: {
 			position: 'absolute',
@@ -108,22 +112,22 @@ const ClockFace = props => {
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(7)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number8tick: {
 			position: 'absolute',
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(8)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number9tick: {
 			position: 'absolute',
@@ -142,22 +146,22 @@ const ClockFace = props => {
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(10)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number11tick: {
 			position: 'absolute',
 			top: parseInt(props.clockSize, 10)/2,
 			left: parseInt(props.clockSize, 10)/2,
 			width: '50%',
-			height: '1px',
+			height: props.smallNumbersLineWidth,
 			transform: `rotate(${getDegByHours(11)}deg)`,
 			transformOrigin: '0% 0%',
 			backgroundColor: '#c7cad2',
-			background: 'linear-gradient(to right,  #fff 0%,#fff 95%,#54a3ee 95%,#1e69de 100%)'
+			background: `linear-gradient(to right,  #fff 0%,#fff ${props.smallNumbersLineSize}%,#54a3ee ${props.smallNumbersLineSize}%,#1e69de 100%)`
 		},
 		number12tick: {
 			position: 'absolute',
@@ -175,20 +179,7 @@ const ClockFace = props => {
 	
 	return (
 		<div className="clock-face">
-			<div className="number-1-tick" style={ styles.number1tick }></div>
-			<div className="number-2-tick" style={ styles.number2tick }></div>
-			<div className="number-3-tick" style={ styles.number3tick }></div>
-			<div className="number-4-tick" style={ styles.number4tick }></div>
-			<div className="number-5-tick" style={ styles.number5tick }></div>
-			<div className="number-6-tick" style={ styles.number6tick }></div>
-			<div className="number-7-tick" style={ styles.number7tick }></div>
-			<div className="number-8-tick" style={ styles.number8tick }></div>
-			<div className="number-9-tick" style={ styles.number9tick }></div>
-			<div className="number-10-tick" style={ styles.number10tick }></div>
-			<div className="number-11-tick" style={ styles.number11tick }></div>
-			<div className="number-12-tick" style={ styles.number12tick }></div>
-			<div className="central-circle" style={ styles.centralCircle }></div>
-			<div className="central-circle-small" style={ styles.centralCircleSmall }></div>
+			{secondLines}
 		</div>
     )
 }

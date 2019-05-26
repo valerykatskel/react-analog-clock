@@ -28,11 +28,11 @@ class AnalogClock extends Component {
 	
 	render() {
 
-		const props = {
-			secondHand: {
+		const settings = {
+			secondsSettings: {
 				currentTime: this.state.currentTime,
 				clockSize: this.props.size,
-				secondHandWidth: this.props.secondHandWidth
+				secondsProps: this.props.seconds
 			},
 			minuteHand: {
 				currentTime: this.state.currentTime,
@@ -49,16 +49,19 @@ class AnalogClock extends Component {
 				clockInnerBigCircleSize: this.props.clockInnerBigCircleSize,
 				clockInnerSmallCircleSize: this.props.clockInnerSmallCircleSize,
 				bigNumbersLineSize: 100 - this.props.bigNumbersLineSize,
-				bigNumbersLineWidth: this.props.bigNumbersLineWidth
+				bigNumbersLineWidth: this.props.bigNumbersLineWidth,
+				smallNumbersLineSize: 100 - this.props.smallNumbersLineSize,
+				smallNumbersLineWidth: this.props.smallNumbersLineWidth,
+				showSecondsLines: this.props.showSecondsLines
 			}
 		}
 
 		return (
 			<div id="clock" style={ this.clockStyles.clock } >
-				< SecondHand { ...props.secondHand } />
-				< MinuteHand { ...props.minuteHand } />
-				< HourHand { ...props.hourHand } />
-				< ClockFace { ...props.clockFace } />
+				< SecondHand { ...settings.secondsSettings } />
+				< MinuteHand { ...settings.minuteHand } />
+				< HourHand { ...settings.hourHand } />
+				< ClockFace { ...settings.clockFace } />
 			</div>
 		)
 	}

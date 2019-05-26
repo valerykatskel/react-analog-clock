@@ -4,7 +4,7 @@ const SecondHand = props => {
         
     const getDegBySeconds = () => (props.currentTime.getSeconds()/60)*360 - 90
     
-    const getSecondHandWidth = () => parseInt(props.secondHandWidth,10)/100 * parseInt(props.clockSize, 10)/2
+    const getSecondHandWidth = () => parseInt(props.secondsProps.handWidth,10)/100 * parseInt(props.clockSize, 10)/2
         
 	const styles = {
         position: 'absolute',
