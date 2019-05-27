@@ -19,9 +19,9 @@ class App extends React.Component {
             minuteHandWidth: 75,                // size of minute hand in %
             showSecondHand: true,               // show second hand or not
             showClockLines: true,               // show seconds lines or not on the clock face
+            secondHandLength: 95,               // length of second hand in % from radius of clock face
+            secondHandWidth: 1,                 // width of second hand in px
             seconds: {                             
-                handLength: 95,                 // length of second hand in % from radius of clock face
-                handWidth: 2,                   // width of second hand in px
                 lineLength: 4,                  // lenght of lines for seconds (0...59) in %
                 lineWidth: 1                    // width of lines for seconds (0...59) in %
             }
@@ -58,6 +58,12 @@ class App extends React.Component {
         })
     }
 
+    handleSecondHandLengthChange(event) {
+        this.setState({
+            secondHandLength: event.target.value
+        })
+    }
+
     render() {
         let clockWrapperStyles = {
             textAlign: 'center'
@@ -80,6 +86,10 @@ class App extends React.Component {
                 <div  style={ {width: '100%', textAlign: 'left'} }>
                     <label htmlFor="cbShow2" style={ {verticalAlign: 'middle'} }>Show second hand: </label>
                     <input type="checkbox" style={ {verticalAlign: 'middle'} }className="custom-cb" id="cbShow2" checked={ this.state.showSecondHand } onChange={ this.handleShowSecondHandChange.bind(this) } />
+                </div>
+                <div  style={ {width: '100%', textAlign: 'left'} }>
+                    <label htmlFor="customRange3" style={ {verticalAlign: 'middle'} }>Second hand length (%): </label>
+                    <input type="range" style={ {verticalAlign: 'middle'} } min="1" value={ this.state.secondHandLength } max="100" className="custom-range" id="customRange3" onChange={ this.handleSecondHandLengthChange.bind(this) } />
                 </div>
                 <div  style={ {width: '100%', textAlign: 'left'} }>
                     <label htmlFor="cbShow3" style={ {verticalAlign: 'middle'} }>Show clock lines: </label>

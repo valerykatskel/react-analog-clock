@@ -30,7 +30,9 @@ class AnalogClock extends Component {
 				currentTime: this.state.currentTime,
 				clockSize: this.props.size,
 				secondsProps: this.props.seconds,
-				showSecondHand: this.props.showSecondHand
+				showSecondHand: this.props.showSecondHand,
+				secondHandLength: this.props.secondHandLength,
+				secondHandWidth: this.props.secondHandWidth
 			},
 			minuteHand: {
 				currentTime: this.state.currentTime,
