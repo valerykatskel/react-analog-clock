@@ -9,7 +9,7 @@ const ClockFace = props => {
 	const bigNumberLinesArr = [15,30,45,60]
 	const bigNumberLines = props.showBigNumberLines ? bigNumberLinesArr.map((number) => < BigNumberLine key={ number } {...props} number={number} />) : ''
 
-	const smallNumberLinesArr = [5,10,20,25,35,40,50,55]
+	const smallNumberLinesArr = [5,10,15,20,25,30,35,40,45,50,55,60]
 	const smallNumberLines = props.showSmallNumberLines ? smallNumberLinesArr.map((number) => < SmallNumberLine key={ number } {...props} number={number} />) : ''
 	const getTopLeftCoordsSmall = () => (parseInt(props.clockSize, 10) - parseInt(props.clockInnerSmallCircleSize, 10)) / 2
 

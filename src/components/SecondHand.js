@@ -18,7 +18,7 @@ const SecondHand = props => {
         zIndex: 10
 	}
 	
-    if (props.secondsProps.showHand) 
+    if (props.showSecondHand) 
         return <div className="second-hand" style={ styles }></div>
     else return false
 }
